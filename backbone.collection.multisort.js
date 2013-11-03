@@ -1,0 +1,72 @@
+define(["backbone","underscore.comparator"],
+function(Backbone , undef                 ) {
+
+    'use strict';
+
+    function multisortId(attributes, directions) {
+        return JSON.stringify({
+            attributes: attributes,
+            directions: directions
+        });
+    }
+    /**
+    Helper function that generates an unique identifier based on attributes
+    and directions object.
+    */
+
+    var MultiSort = Backbone.Collection.extend({
+
+        _multisortId: false,
+        /**
+        Used to check if collection needs to be resorted.
+
+        @property _multisortId
+        @private
+        */
+
+        multisort: function(attributes, directions, options) {
+
+            // build the multisortId
+            var mId = multisortId(attributes, directions);
+
+            if (this._multisortId !== mId) {
+
+                // build and set comparator function
+                this.comparator = _.comparator(attributes, directions, { root: 'attributes' });
+
+                var sort = this.sort(options);
+                // save the sort
+                this._multisortId = mId;
+            }
+
+            return this;
+        },
+        /**
+        Builds a comparator using _.comparator,
+        sets it as the collection comparator,
+        checks if the collection is already sorted in the requested manner
+        and then finally runs the Backbone.Collection.prototype.sort method passing on the options.
+
+        @method multisort
+        @param attributes {String|Array}
+        @param [directions] {Number|Object}
+        @param [options] {Object}
+        */
+
+        isSorted: function(attributes, directions) {
+            return this._multisortId === multisortId(attributes, directions);
+        },
+        /**
+        Checks if the collection is sorted according to
+        a set of sorting attributes and sorting directions.
+
+        Internally checks a property named _multisortId.
+
+        @method isSorted
+        @param attributes {String|Array}
+        @param directions {Number|Object}
+        */
+    });
+
+    return MultiSort;
+});
