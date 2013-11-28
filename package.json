@@ -1,7 +1,7 @@
 {
   "name": "backbone.collection.multisort",
   "main": "./src/backbone.collection.multisort",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/simonfan/backbone.collection.multisort.git"
