@@ -1,11 +1,25 @@
 {
-  "name": "package",
+  "name": "backbone.collection.multisort",
+  "main": "./src/backbone.collection.multisort",
   "version": "0.0.0",
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonfan/backbone.collection.multisort.git"
+  },
+  "dependencies": {
+    "amdefine": ">=0.1.0",
+    "backbone": "~1.1.0",
+    "underscore.comparator": "0.0.1",
+    "underscore": "~1.5.2"
+  },
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-connect": "*",
     "grunt-bower-requirejs": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-yuidoc": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-requirejs": "*"
   }
 }

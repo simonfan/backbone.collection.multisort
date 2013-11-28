@@ -1,10 +1,11 @@
 {
   "name": "backbone.collection.multisort",
-  "main": "backbone.collection.multisort.js",
+  "main": "src/backbone.collection.multisort.js",
   "version": "0.0.0",
   "dependencies": {
     "backbone": "~1.1.0",
-    "underscore.comparator": "simonfan/underscore.comparator"
+    "underscore.comparator": "*",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {
     "requirejs": "*",
