@@ -1,7 +1,8 @@
 {
   "name": "backbone.collection.multisort",
   "main": "./src/backbone.collection.multisort",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "A Backbone collection that is sortable by multiple attributes.",
   "repository": {
     "type": "git",
     "url": "https://github.com/simonfan/backbone.collection.multisort.git"
@@ -9,17 +10,21 @@
   "dependencies": {
     "amdefine": ">=0.1.0",
     "backbone": "~1.1.0",
-    "underscore.comparator": "0.0.1",
-    "underscore": "~1.5.2"
+    "comparator": "git://github.com/simonfan/comparator.git"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-connect": "*",
-    "grunt-bower-requirejs": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-nodeunit": "*",
-    "grunt-contrib-yuidoc": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-requirejs": "*"
+    "grunt": "~0.4.2",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-bower-requirejs": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-yuidoc": "~0.5.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "should": "~2.1.0",
+    "mocha": "~1.15.0",
+    "grunt-simple-mocha": "~0.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

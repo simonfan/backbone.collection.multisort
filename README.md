@@ -1,1 +1,3 @@
-This is a component boilerplate. Add your description here!
+# backbone.collection.multisort
+
+A Backbone collection that is sortable by multiple attributes.

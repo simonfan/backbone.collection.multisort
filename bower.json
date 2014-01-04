@@ -1,11 +1,11 @@
 {
   "name": "backbone.collection.multisort",
   "main": "src/backbone.collection.multisort.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "A Backbone collection that is sortable by multiple attributes.",
   "dependencies": {
     "backbone": "~1.1.0",
-    "underscore.comparator": "*",
-    "underscore": "~1.5.2"
+    "comparator": "*"
   },
   "devDependencies": {
     "requirejs": "*",

@@ -1,14 +1,17 @@
 require.config({
-	urlArgs: 'bust=0.7158285474870354',
+	urlArgs: 'bust=0.6290664107073098',
 	baseUrl: '/',
 	paths: {
 		requirejs: 'bower_components/requirejs/require',
 		text: 'bower_components/requirejs-text/text',
+		mocha: 'node_modules/mocha/mocha',
+		should: 'node_modules/should/should',
 		'backbone.collection.multisort': 'src/backbone.collection.multisort',
 		backbone: 'bower_components/backbone/backbone',
+		comparator: 'bower_components/comparator/src/comparator',
 		jquery: 'bower_components/jquery/jquery',
+		lodash: 'bower_components/lodash/dist/lodash.compat',
 		'requirejs-text': 'bower_components/requirejs-text/text',
-		'underscore.comparator': 'bower_components/underscore.comparator/src/underscore.comparator',
 		underscore: 'bower_components/underscore/underscore'
 	},
 	shim: {
@@ -21,6 +24,12 @@ require.config({
 		},
 		underscore: {
 			exports: '_'
+		},
+		mocha: {
+			exports: 'mocha'
+		},
+		should: {
+			exports: 'should'
 		}
 	}
 });

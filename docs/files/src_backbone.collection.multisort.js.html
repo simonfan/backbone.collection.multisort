@@ -100,75 +100,17 @@
 if (typeof define !== &#x27;function&#x27;) { var define = require(&#x27;amdefine&#x27;)(module) }
 /* jshint ignore:end */
 
-define([&#x27;backbone&#x27;, &#x27;underscore.comparator&#x27;, &#x27;underscore&#x27;], function (Backbone, UnderscoreComparator, _) {
+define([&quot;backbone&quot;,&quot;comparator&quot;], function (Backbone, Comparator) {
 	&#x27;use strict&#x27;;
 
-	function multisortId(attributes, directions) {
-		return JSON.stringify({
-			attributes: attributes,
-			directions: directions
-		});
-	}
-	/**
-	Helper function that generates an unique identifier based on attributes
-	and directions object.
-	*/
+	console.log(&#x27;BackboneCollectionMultisort running!&#x27;);
 
-	var MultiSort = Backbone.Collection.extend({
+	var BackboneCollectionMultisort = function BackboneCollectionMultisort() {
 
-		/**
-		Used to check if collection needs to be resorted.
+	};
 
-		@property _multisortId
-		@private
-		*/
-		_multisortId: false,
 
-		/**
-		Builds a comparator using _.comparator,
-		sets it as the collection comparator,
-		checks if the collection is already sorted in the requested manner
-		and then finally runs the Backbone.Collection.prototype.sort method passing on the options.
-
-		@method multisort
-		@param attributes {String|Array}
-		@param [directions] {Number|Object}
-		@param [options] {Object}
-		*/
-		multisort: function multisort(attributes, directions, options) {
-
-			// build the multisortId
-			var mId = multisortId(attributes, directions);
-
-			if (this._multisortId !== mId) {
-
-				// build and set comparator function
-				this.comparator = _.comparator(attributes, directions, { root: &#x27;attributes&#x27; });
-
-				var sort = this.sort(options);
-				// save the sort
-				this._multisortId = mId;
-			}
-
-			return this;
-		},
-
-		/**
-		Checks if the collection is sorted according to
-		a set of sorting attributes and sorting directions.
-
-		Internally checks a property named _multisortId.
-
-		@method isSorted
-		@param attributes {String|Array}
-		@param directions {Number|Object}
-		*/
-		isSorted: function isSorted(attributes, directions) {
-			return this._multisortId === multisortId(attributes, directions);
-		},
-	});
-
-	return MultiSort;
+	return BackboneCollectionMultisort;
 });
 
     </pre>

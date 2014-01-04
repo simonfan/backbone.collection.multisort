@@ -12,7 +12,7 @@
 if (typeof define !== 'function') { var define = require('amdefine')(module) }
 /* jshint ignore:end */
 
-define(['backbone', 'underscore.comparator', 'underscore'], function (Backbone, UnderscoreComparator, _) {
+define(["backbone", "comparator"], function (Backbone, comparator) {
 	'use strict';
 
 	function multisortId(attributes, directions) {
@@ -69,7 +69,7 @@ define(['backbone', 'underscore.comparator', 'underscore'], function (Backbone, 
 			if (this._multisortId !== mId) {
 
 				// build and set comparator function
-				this.comparator = _.comparator(attributes, directions, { root: 'attributes' });
+				this.comparator = comparator(attributes, directions, { root: 'attributes' });
 
 				var sort = this.sort(options);
 				// save the sort
