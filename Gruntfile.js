@@ -24,6 +24,9 @@ module.exports = function (grunt) {
 		bower: {
 			target: {
 				rjsConfig: 'amdconfig.js',
+				options: {
+					baseUrl: './src'
+				}
 			}
 		},
 
@@ -98,7 +101,7 @@ module.exports = function (grunt) {
 					// base url where to look for module files
 					// and relative to which the module paths will be defined
 					// (must coincide with that defined in mainConfigFile)
-					baseUrl: './',
+					baseUrl: './src',
 					// module name
 					name: 'backbone.collection.multisort',
 					// output here
@@ -111,25 +114,16 @@ module.exports = function (grunt) {
 
 					// exclude these modules AND their dependencies
 					// (excluding your bower dependencies)
-					exclude: ["backbone", "comparator"],
+					exclude: ["backbone","comparator"],
 
 					// excludeShallow
 					excludeShallow: [],
 
 					optimize: 'uglify2',
-				}
-			},
 
-			project: {
-				options: {
-					// source files
-					appDir: 'src/',
-					// output here:
-					dir: 'built/project/',
-					mainConfigFile: 'amdconfig.js',
-
-					// do not copy these files
-					fileExclusionRegExp: /^\./,
+					pragmas: {
+						exclude: true,
+					},
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 
 	var mod = typeof define !== 'function' ?
 		// node
-		'.././src/backbone.collection.multisort' :
+		'.././src' :
 		// browser
 		'backbone.collection.multisort',
 		// dependencies for the test

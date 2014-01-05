@@ -4,8 +4,8 @@
         "version": "0.0.0"
     },
     "files": {
-        "src/backbone.collection.multisort.js": {
-            "name": "src/backbone.collection.multisort.js",
+        "src/index.js": {
+            "name": "src/index.js",
             "modules": {
                 "BackboneCollectionMultisort": 1
             },
@@ -22,12 +22,85 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/backbone.collection.multisort.js",
+            "file": "src/index.js",
             "line": 5,
             "description": "AMD and CJS module."
         }
     },
     "classes": {},
-    "classitems": [],
-    "warnings": []
+    "classitems": [
+        {
+            "file": "src/index.js",
+            "line": 24,
+            "description": "Helper function that generates an unique identifier based on attributes\nand directions object.",
+            "class": "",
+            "module": "BackboneCollectionMultisort"
+        },
+        {
+            "file": "src/index.js",
+            "line": 31,
+            "description": "Used to check if collection needs to be resorted.",
+            "itemtype": "property",
+            "name": "_multisortId",
+            "access": "private",
+            "tagname": "",
+            "class": "",
+            "module": "BackboneCollectionMultisort"
+        },
+        {
+            "file": "src/index.js",
+            "line": 39,
+            "description": "Checks if the collection is sorted according to\na set of sorting attributes and sorting directions.\n\nInternally checks a property named _multisortId.",
+            "itemtype": "method",
+            "name": "isSorted",
+            "params": [
+                {
+                    "name": "attributes",
+                    "description": "",
+                    "type": "String|Array"
+                },
+                {
+                    "name": "directions",
+                    "description": "",
+                    "type": "Number|Object"
+                }
+            ],
+            "class": "",
+            "module": "BackboneCollectionMultisort"
+        },
+        {
+            "file": "src/index.js",
+            "line": 53,
+            "description": "Builds a comparator using _.comparator,\nsets it as the collection comparator,\nchecks if the collection is already sorted in the requested manner\nand then finally runs the Backbone.Collection.prototype.sort method passing on the options.",
+            "itemtype": "method",
+            "name": "multisort",
+            "params": [
+                {
+                    "name": "attributes",
+                    "description": "",
+                    "type": "String|Array"
+                },
+                {
+                    "name": "directions",
+                    "description": "",
+                    "type": "Number|Object",
+                    "optional": true
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "class": "",
+            "module": "BackboneCollectionMultisort"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nHelper function that generates an unique identifier based on attributes\nand directions object.",
+            "line": " src/index.js:24"
+        }
+    ]
 }
